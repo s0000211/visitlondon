@@ -1,0 +1,25 @@
+{
+  "name": "workflow",
+  "version": "1.0.0",
+  "description": "My web workflow with NPM, Gulp, SASS and more",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s0000211/udemy-workflow-1.git"
+  },
+  "keywords": [
+    "SASS",
+    "NPM",
+    "Git",
+    "Gulp"
+  ],
+  "author": "Jonathan Ruzek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/s0000211/udemy-workflow-1/issues"
+  },
+  "homepage": "https://github.com/s0000211/udemy-workflow-1#readme"
+}
