@@ -17,6 +17,7 @@ var htmlmin = require('gulp-htmlmin');
 
 var SOURCEPATHS = {
   sassSource: 'src/scss/*.scss',
+  sassApp: 'src/scss/app.scss',
   htmlSource: 'src/*.html',
   htmlPartialSource: 'src/parital/*.html',
   jsSource: 'src/js/**',
@@ -42,12 +43,14 @@ gulp.task('clean-scripts', function(){
 });
 
 gulp.task('sass', function(){
+/* Removed in lesson 39
   var bootstrapCSS = gulp.src('./node_modules/bootstrap/dist/css/bootstrap.css');
   var sassFiles;
-  sassFiles = gulp.src(SOURCEPATHS.sassSource)
-    .pipe(autoprefixer('last 2 versions'))
+*/
+  sassFiles = gulp.src(SOURCEPATHS.sassApp)
+    .pipe(autoprefixer(''))
     .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
-    return merge(bootstrapCSS, sassFiles)
+    /*return merge(bootstrapCSS, sassFiles)*/
       .pipe(concat('app.css'))
       .pipe(gulp.dest(APPPATH.css));
 });
@@ -85,12 +88,14 @@ gulp.task('compress', function(){
 
 /* Lesson 24 - this is run by the command: gulp compresscss */
 gulp.task('compresscss', function(){
+/* Removed in lesson 39
   var bootstrapCSS = gulp.src('./node_modules/bootstrap/dist/css/bootstrap.css');
   var sassFiles;
+*/
   sassFiles = gulp.src(SOURCEPATHS.sassSource)
     .pipe(autoprefixer('last 2 versions'))
     .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
-    return merge(bootstrapCSS, sassFiles)
+    /*return merge(bootstrapCSS, sassFiles)*/
       .pipe(concat('app.css'))
       .pipe(cssmin())
       .pipe(rename({suffix: '.min'}))
